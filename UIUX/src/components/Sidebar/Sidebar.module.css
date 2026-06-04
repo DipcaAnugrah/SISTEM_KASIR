@@ -1,0 +1,285 @@
+/* ============================================================
+   SIDEBAR — CSS Module
+   ============================================================ */
+
+/* === WRAPPER === */
+.sidebar {
+  position      : fixed;
+  top           : 0;
+  left          : 0;
+  bottom        : 0;
+  width         : var(--sidebar-width);
+  background    : var(--sidebar-bg);
+  display       : flex;
+  flex-direction: column;
+  z-index       : var(--z-sidebar);
+  transition    : width var(--transition-slow),
+                  transform var(--transition-slow);
+  overflow      : hidden;
+  border-right  : 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.sidebar.collapsed {
+  width: var(--sidebar-width-collapsed);
+}
+
+/* === LOGO SECTION === */
+.logoSection {
+  display        : flex;
+  align-items    : center;
+  gap            : var(--space-3);
+  padding        : var(--space-5) var(--space-4);
+  border-bottom  : 1px solid rgba(255, 255, 255, 0.06);
+  min-height     : var(--header-height);
+  flex-shrink    : 0;
+}
+
+.logoMark {
+  width          : 34px;
+  height         : 34px;
+  background     : linear-gradient(135deg, #2563EB, #1D4ED8);
+  border-radius  : var(--radius-sm);
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  color          : #FFFFFF;
+  flex-shrink    : 0;
+  box-shadow     : 0 2px 8px rgba(37, 99, 235, 0.4);
+}
+
+.logoText {
+  overflow: hidden;
+  transition: opacity var(--transition-slow), width var(--transition-slow);
+}
+
+.logoText.hidden {
+  opacity: 0;
+  width  : 0;
+}
+
+.logoName {
+  font-size    : 14px;
+  font-weight  : 700;
+  color        : #FFFFFF;
+  white-space  : nowrap;
+  letter-spacing: -0.01em;
+  line-height  : 1.2;
+}
+
+.logoSub {
+  font-size : 10.5px;
+  color     : rgba(255, 255, 255, 0.35);
+  white-space: nowrap;
+  margin-top : 1px;
+}
+
+/* === BRANCH BADGE === */
+.branchBadge {
+  margin        : var(--space-3) var(--space-4);
+  background    : rgba(37, 99, 235, 0.12);
+  border        : 1px solid rgba(37, 99, 235, 0.2);
+  border-radius : var(--radius-sm);
+  padding       : 6px var(--space-3);
+  display       : flex;
+  align-items   : center;
+  gap           : var(--space-2);
+  flex-shrink   : 0;
+  overflow      : hidden;
+  transition    : opacity var(--transition);
+}
+
+.branchBadge.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.branchIcon {
+  color      : var(--color-primary);
+  flex-shrink: 0;
+}
+
+.branchName {
+  font-size    : 11.5px;
+  color        : rgba(255, 255, 255, 0.6);
+  white-space  : nowrap;
+  overflow     : hidden;
+  text-overflow: ellipsis;
+}
+
+/* === NAV SECTION === */
+.nav {
+  flex      : 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding   : var(--space-3) var(--space-3);
+  scrollbar-width: none;
+}
+
+.nav::-webkit-scrollbar {
+  display: none;
+}
+
+.navLabel {
+  font-size     : 10px;
+  font-weight   : 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color         : rgba(255, 255, 255, 0.2);
+  padding       : var(--space-4) var(--space-2) var(--space-2);
+  white-space   : nowrap;
+  overflow      : hidden;
+  transition    : opacity var(--transition);
+}
+
+.navLabel.hidden {
+  opacity: 0;
+}
+
+/* === COLLAPSE BUTTON === */
+.collapseBtn {
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  gap            : var(--space-2);
+  width          : 100%;
+  padding        : var(--space-3) var(--space-4);
+  border-top     : 1px solid rgba(255, 255, 255, 0.06);
+  color          : rgba(255, 255, 255, 0.3);
+  font-size      : 12px;
+  transition     : color var(--transition), background var(--transition);
+  flex-shrink    : 0;
+}
+
+.collapseBtn:hover {
+  color      : rgba(255, 255, 255, 0.6);
+  background : var(--sidebar-item-hover);
+}
+
+.collapseIcon {
+  transition: transform var(--transition-slow);
+  flex-shrink: 0;
+}
+
+.collapseIcon.flipped {
+  transform: rotate(180deg);
+}
+
+.collapseLabel {
+  font-size  : 12px;
+  white-space: nowrap;
+  overflow   : hidden;
+  transition : opacity var(--transition);
+}
+
+.collapseLabel.hidden {
+  opacity: 0;
+  width  : 0;
+}
+
+/* === USER FOOTER === */
+.userFooter {
+  display    : flex;
+  align-items: center;
+  gap        : var(--space-3);
+  padding    : var(--space-3) var(--space-4);
+  border-top : 1px solid rgba(255, 255, 255, 0.06);
+  flex-shrink: 0;
+  position   : relative;
+  overflow   : hidden;
+}
+
+.userAvatar {
+  width          : 32px;
+  height         : 32px;
+  border-radius  : 50%;
+  background     : linear-gradient(135deg, #2563EB, #7C3AED);
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  font-size      : 13px;
+  font-weight    : 700;
+  color          : #FFFFFF;
+  flex-shrink    : 0;
+}
+
+.userInfo {
+  flex    : 1;
+  overflow: hidden;
+  transition: opacity var(--transition-slow);
+}
+
+.userInfo.hidden {
+  opacity: 0;
+  width  : 0;
+}
+
+.userName {
+  font-size    : 13px;
+  font-weight  : 600;
+  color        : rgba(255, 255, 255, 0.85);
+  white-space  : nowrap;
+  overflow     : hidden;
+  text-overflow: ellipsis;
+  line-height  : 1.3;
+}
+
+.userRole {
+  font-size    : 11px;
+  color        : rgba(255, 255, 255, 0.35);
+  white-space  : nowrap;
+  margin-top   : 1px;
+}
+
+.logoutBtn {
+  color     : rgba(255, 255, 255, 0.3);
+  padding   : var(--space-1);
+  border-radius: var(--radius-xs);
+  transition: color var(--transition), background var(--transition);
+  flex-shrink: 0;
+}
+
+.logoutBtn:hover {
+  color     : #FCA5A5;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+/* === MOBILE OVERLAY === */
+.overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: calc(var(--z-sidebar) - 1);
+  animation: fadeIn 0.2s ease;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .sidebar:not(.collapsed) {
+    width: var(--sidebar-width);
+    box-shadow: var(--shadow-xl);
+  }
+  .sidebar.collapsed {
+    width: var(--sidebar-width-collapsed);
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    transform: translateX(-100%);
+    width    : var(--sidebar-width) !important;
+    box-shadow: var(--shadow-xl);
+  }
+
+  .sidebar.mobileOpen {
+    transform: translateX(0);
+  }
+
+  .overlay {
+    display: block;
+  }
+
+  .collapseBtn {
+    display: none;
+  }
+}

@@ -1,0 +1,345 @@
+/* ============================================================
+   LAPORAN CABANG — CSS Module
+   ============================================================ */
+
+/* === TOOLBAR === */
+.toolbar {
+  display        : flex;
+  align-items    : center;
+  justify-content: space-between;
+  margin-bottom  : var(--space-5);
+  gap            : var(--space-4);
+  flex-wrap      : wrap;
+}
+
+/* Period tabs */
+.periodTabs {
+  display      : flex;
+  gap          : 2px;
+  background   : var(--color-bg-secondary);
+  border       : 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding      : 3px;
+}
+
+.periodBtn {
+  padding      : 6px 16px;
+  border-radius: var(--radius-sm);
+  font-size    : 13px;
+  font-weight  : 500;
+  color        : var(--color-text-muted);
+  transition   : background var(--transition), color var(--transition);
+  white-space  : nowrap;
+}
+
+.periodBtn:hover  { color: var(--color-text); }
+
+.periodBtn.active {
+  background  : var(--color-card);
+  color       : var(--color-text);
+  font-weight : 600;
+  box-shadow  : var(--shadow-xs);
+}
+
+/* Export button */
+.exportBtn {
+  display        : flex;
+  align-items    : center;
+  gap            : var(--space-2);
+  padding        : 8px var(--space-4);
+  border         : 1px solid var(--color-border);
+  border-radius  : var(--radius-md);
+  background     : var(--color-card);
+  color          : var(--color-text-muted);
+  font-size      : 13px;
+  font-weight    : 500;
+  transition     : background var(--transition), color var(--transition), border-color var(--transition);
+}
+
+.exportBtn:hover {
+  background  : var(--color-bg-secondary);
+  color       : var(--color-text);
+  border-color: var(--color-border-strong);
+}
+
+/* === KPI GRID === */
+.kpiGrid {
+  display              : grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap                  : var(--space-4);
+  margin-bottom        : var(--space-5);
+}
+
+/* === WIDGET CARD === */
+.widget {
+  background   : var(--color-card);
+  border       : 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding      : var(--space-5);
+  box-shadow   : var(--shadow-card);
+}
+
+.widgetHeader {
+  display        : flex;
+  align-items    : center;
+  justify-content: space-between;
+  margin-bottom  : var(--space-4);
+}
+
+.widgetTitle {
+  font-size  : 14px;
+  font-weight: 600;
+  color      : var(--color-text);
+}
+
+.widgetMeta {
+  font-size: 12px;
+  color    : var(--color-text-muted);
+}
+
+/* === MAIN GRID === */
+.mainGrid {
+  display              : grid;
+  grid-template-columns: 1fr 320px;
+  gap                  : var(--space-5);
+  margin-bottom        : var(--space-5);
+}
+
+/* === BOTTOM GRID === */
+.bottomGrid {
+  display              : grid;
+  grid-template-columns: 1fr 1fr;
+  gap                  : var(--space-5);
+}
+
+/* ============================================================
+   BAR CHART (CSS-only)
+   ============================================================ */
+
+.chartArea {
+  display    : flex;
+  align-items: flex-end;
+  gap        : 6px;
+  height     : 180px;
+  padding-bottom: var(--space-1);
+}
+
+.bar {
+  flex          : 1;
+  display       : flex;
+  flex-direction: column;
+  align-items   : center;
+  justify-content: flex-end;
+  gap           : var(--space-1);
+  height        : 100%;
+}
+
+.barTrack {
+  width        : 100%;
+  background   : var(--color-bg-secondary);
+  border-radius: var(--radius-xs) var(--radius-xs) 0 0;
+  display      : flex;
+  align-items  : flex-end;
+  overflow     : hidden;
+  flex         : 1;
+}
+
+.barFill {
+  width        : 100%;
+  border-radius: var(--radius-xs) var(--radius-xs) 0 0;
+  background   : linear-gradient(to top, var(--color-primary-dark), var(--color-primary));
+  transition   : height 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position     : relative;
+}
+
+.barFill.today {
+  background: linear-gradient(to top, #059669, #10B981);
+}
+
+.barFill:hover::after {
+  content      : attr(data-value);
+  position     : absolute;
+  top          : -28px;
+  left         : 50%;
+  transform    : translateX(-50%);
+  background   : var(--color-text);
+  color        : var(--color-card);
+  font-size    : 10px;
+  font-weight  : 700;
+  padding      : 2px 6px;
+  border-radius: var(--radius-xs);
+  white-space  : nowrap;
+  pointer-events: none;
+}
+
+.barLabel {
+  font-size: 10.5px;
+  color    : var(--color-text-muted);
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.barValue {
+  font-size  : 10px;
+  color      : var(--color-text-muted);
+  text-align : center;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   PAYMENT METHOD DONUT (CSS radial)
+   ============================================================ */
+
+.donutWrap {
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  gap            : var(--space-4);
+}
+
+.donut {
+  width        : 140px;
+  height       : 140px;
+  border-radius: 50%;
+  position     : relative;
+  flex-shrink  : 0;
+}
+
+.donutLabel {
+  position     : absolute;
+  inset        : 0;
+  display      : flex;
+  flex-direction: column;
+  align-items  : center;
+  justify-content: center;
+  text-align   : center;
+}
+
+.donutTotal {
+  font-size    : 16px;
+  font-weight  : 800;
+  color        : var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.donutSub {
+  font-size: 11px;
+  color    : var(--color-text-muted);
+}
+
+.donutLegend {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.donutLegendItem {
+  display        : flex;
+  align-items    : center;
+  justify-content: space-between;
+  gap            : var(--space-2);
+}
+
+.donutLegendLeft {
+  display    : flex;
+  align-items: center;
+  gap        : var(--space-2);
+}
+
+.donutLegendDot {
+  width        : 10px;
+  height       : 10px;
+  border-radius: 50%;
+  flex-shrink  : 0;
+}
+
+.donutLegendLabel { font-size: 13px; color: var(--color-text-muted); }
+.donutLegendVal   { font-size: 13px; font-weight: 700; color: var(--color-text); }
+.donutLegendPct   { font-size: 11px; color: var(--color-text-disabled); }
+
+/* ============================================================
+   HOURLY HEATMAP
+   ============================================================ */
+
+.heatmap {
+  display              : grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap                  : 4px;
+}
+
+.heatCell {
+  height       : 32px;
+  border-radius: var(--radius-xs);
+  display      : flex;
+  align-items  : center;
+  justify-content: center;
+  font-size    : 10px;
+  font-weight  : 600;
+  color        : var(--color-text-muted);
+  transition   : transform var(--transition);
+  cursor       : default;
+  flex-direction: column;
+  gap          : 2px;
+}
+
+.heatCell:hover { transform: scale(1.05); z-index: 1; }
+
+.heatCellTime { font-size: 9px; font-weight: 400; }
+
+/* ============================================================
+   TOP PRODUCTS TABLE
+   ============================================================ */
+
+.prodTable {
+  width    : 100%;
+  display  : flex;
+  flex-direction: column;
+  gap      : var(--space-2);
+}
+
+.prodRow {
+  display      : flex;
+  align-items  : center;
+  gap          : var(--space-3);
+  padding      : var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  background   : var(--color-bg);
+  transition   : background var(--transition);
+}
+
+.prodRow:hover { background: var(--color-bg-secondary); }
+
+.prodRank {
+  width        : 22px;
+  height       : 22px;
+  border-radius: 50%;
+  display      : flex;
+  align-items  : center;
+  justify-content: center;
+  font-size    : 11px;
+  font-weight  : 800;
+  flex-shrink  : 0;
+}
+
+.rank1 { background: #FEF3C7; color: #B45309; }
+.rank2 { background: var(--color-bg-secondary); color: var(--color-text-muted); }
+.rank3 { background: var(--color-bg-secondary); color: var(--color-text-muted); }
+.rankOther { background: transparent; color: var(--color-text-disabled); }
+
+.prodEmoji { font-size: 16px; flex-shrink: 0; }
+.prodNama  { flex: 1; font-size: 13px; font-weight: 500; color: var(--color-text); min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.prodTerjual { font-size: 12px; color: var(--color-text-muted); }
+.prodTotal { font-size: 13px; font-weight: 700; color: var(--color-text); font-variant-numeric: tabular-nums; }
+
+/* === RESPONSIVE === */
+@media (max-width: 1200px) {
+  .kpiGrid  { grid-template-columns: repeat(2, 1fr); }
+  .mainGrid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .kpiGrid    { grid-template-columns: repeat(2, 1fr); }
+  .bottomGrid { grid-template-columns: 1fr; }
+  .heatmap    { grid-template-columns: repeat(6, 1fr); }
+}

@@ -1,0 +1,284 @@
+/* ============================================================
+   LOGIN PAGE — CSS Module
+   ============================================================ */
+
+/* === CARD CONTAINER === */
+.card {
+  background    : rgba(255, 255, 255, 0.04);
+  border        : 1px solid rgba(255, 255, 255, 0.10);
+  border-radius : var(--radius-xl);
+  padding       : var(--space-8);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow    : 0 24px 48px rgba(0, 0, 0, 0.3),
+                  0 0 0 1px rgba(255,255,255,0.05) inset;
+  width         : 100%;
+  animation     : slideInUp 0.4s ease forwards;
+}
+
+/* === LOGO SECTION === */
+.logoSection {
+  display        : flex;
+  align-items    : center;
+  gap            : var(--space-4);
+  margin-bottom  : var(--space-6);
+}
+
+.logoMark {
+  width          : 52px;
+  height         : 52px;
+  background     : linear-gradient(135deg, #2563EB, #1D4ED8);
+  border-radius  : var(--radius-md);
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  color          : #FFFFFF;
+  flex-shrink    : 0;
+  box-shadow     : 0 4px 12px rgba(37, 99, 235, 0.5),
+                   0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+.appName {
+  font-size    : 20px;
+  font-weight  : 700;
+  color        : #FFFFFF;
+  letter-spacing: -0.02em;
+  line-height  : 1.2;
+}
+
+.appTagline {
+  font-size : 12px;
+  color     : rgba(255, 255, 255, 0.45);
+  margin-top: 2px;
+  font-weight: 400;
+}
+
+/* === DIVIDER === */
+.divider {
+  height        : 1px;
+  background    : rgba(255, 255, 255, 0.08);
+  margin-bottom : var(--space-6);
+}
+
+/* === FORM === */
+.form {
+  display       : flex;
+  flex-direction: column;
+  gap           : var(--space-4);
+}
+
+.formTitle {
+  font-size    : 15px;
+  font-weight  : 600;
+  color        : rgba(255, 255, 255, 0.9);
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.01em;
+}
+
+/* === FIELD === */
+.fieldGroup {
+  display       : flex;
+  flex-direction: column;
+  gap           : var(--space-2);
+}
+
+.label {
+  font-size  : 13px;
+  font-weight: 500;
+  color      : rgba(255, 255, 255, 0.6);
+  letter-spacing: 0.01em;
+}
+
+/* === INPUT WRAPPER (border glow effect) === */
+.inputWrapper {
+  position       : relative;
+  display        : flex;
+  align-items    : center;
+  border         : 1px solid rgba(255, 255, 255, 0.12);
+  border-radius  : var(--radius-sm);
+  background     : rgba(255, 255, 255, 0.06);
+  transition     : border-color var(--transition),
+                   box-shadow var(--transition),
+                   background var(--transition);
+}
+
+.inputWrapper:focus-within {
+  border-color: var(--color-primary);
+  background  : rgba(255, 255, 255, 0.09);
+  box-shadow  : 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+.inputWrapper.inputError {
+  border-color: var(--color-danger);
+  box-shadow  : 0 0 0 3px rgba(239, 68, 68, 0.15);
+}
+
+.input {
+  flex      : 1;
+  background: transparent;
+  border    : none;
+  outline   : none;
+  padding   : 11px var(--space-4);
+  font-size : 14px;
+  color     : #FFFFFF;
+  width     : 100%;
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.28);
+}
+
+.input:disabled {
+  opacity: 0.5;
+  cursor : not-allowed;
+}
+
+/* autofill style override */
+.input:-webkit-autofill,
+.input:-webkit-autofill:hover,
+.input:-webkit-autofill:focus {
+  -webkit-text-fill-color: #FFFFFF;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(30, 41, 59, 0.8) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* === PASSWORD TOGGLE === */
+.togglePass {
+  padding      : 0 var(--space-3);
+  color        : rgba(255, 255, 255, 0.35);
+  transition   : color var(--transition);
+  display      : flex;
+  align-items  : center;
+  justify-content: center;
+  flex-shrink  : 0;
+  height       : 44px;
+}
+
+.togglePass:hover {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* === ERROR BOX === */
+.errorBox {
+  display     : flex;
+  align-items : center;
+  gap         : var(--space-2);
+  background  : rgba(239, 68, 68, 0.12);
+  border      : 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: var(--radius-sm);
+  padding     : 10px var(--space-3);
+  color       : #FCA5A5;
+  font-size   : 13px;
+  animation   : fadeIn 0.2s ease;
+}
+
+.errorBox svg {
+  flex-shrink: 0;
+}
+
+/* === REMEMBER ME ROW === */
+.rememberRow {
+  display: flex;
+  align-items: center;
+}
+
+.checkLabel {
+  display    : flex;
+  align-items: center;
+  gap        : var(--space-2);
+  cursor     : pointer;
+  user-select: none;
+}
+
+.checkbox {
+  width         : 16px;
+  height        : 16px;
+  border-radius : var(--radius-xs);
+  accent-color  : var(--color-primary);
+  cursor        : pointer;
+  flex-shrink   : 0;
+}
+
+.checkText {
+  font-size : 13px;
+  color     : rgba(255, 255, 255, 0.55);
+}
+
+/* === SUBMIT BUTTON === */
+.submitBtn {
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  gap            : var(--space-2);
+  width          : 100%;
+  padding        : 13px var(--space-6);
+  background     : linear-gradient(135deg, #2563EB, #1D4ED8);
+  color          : #FFFFFF;
+  font-size      : 15px;
+  font-weight    : 600;
+  border-radius  : var(--radius-sm);
+  margin-top     : var(--space-2);
+  transition     : opacity var(--transition),
+                   transform var(--transition),
+                   box-shadow var(--transition);
+  box-shadow     : 0 4px 14px rgba(37, 99, 235, 0.5);
+  letter-spacing : 0.01em;
+}
+
+.submitBtn:hover:not(:disabled) {
+  opacity   : 0.92;
+  transform : translateY(-1px);
+  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.55);
+}
+
+.submitBtn:active:not(:disabled) {
+  transform : translateY(0);
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+}
+
+.submitBtn:disabled {
+  opacity: 0.65;
+  cursor : not-allowed;
+}
+
+/* === SPINNER === */
+.spinner {
+  animation: spin 0.7s linear infinite;
+}
+
+/* === SHAKE ANIMATION === */
+.shake {
+  animation: shake 0.4s ease;
+}
+
+/* === DEMO HINT === */
+.demoHint {
+  margin-top : var(--space-5);
+  text-align : center;
+  font-size  : 12px;
+  color      : rgba(255, 255, 255, 0.22);
+  border-top : 1px solid rgba(255, 255, 255, 0.07);
+  padding-top: var(--space-4);
+}
+
+.demoHint strong {
+  color      : rgba(255, 255, 255, 0.45);
+  font-weight: 600;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 480px) {
+  .card {
+    padding      : var(--space-6);
+    border-radius: var(--radius-lg);
+  }
+
+  .logoMark {
+    width : 44px;
+    height: 44px;
+  }
+
+  .appName {
+    font-size: 18px;
+  }
+}

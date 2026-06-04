@@ -1,0 +1,298 @@
+/* ============================================================
+   CART PANEL — CSS Module
+   ============================================================ */
+
+.panel {
+  background    : var(--color-card);
+  border-left   : 1px solid var(--color-border);
+  display       : flex;
+  flex-direction: column;
+  overflow      : hidden;
+}
+
+/* === HEADER === */
+.header {
+  display        : flex;
+  align-items    : center;
+  justify-content: space-between;
+  padding        : var(--space-4) var(--space-4) var(--space-3);
+  border-bottom  : 1px solid var(--color-border);
+  flex-shrink    : 0;
+  gap            : var(--space-3);
+}
+
+.headerLeft {
+  display    : flex;
+  align-items: center;
+  gap        : var(--space-2);
+  color      : var(--color-text);
+}
+
+.headerTitle {
+  font-size  : 14px;
+  font-weight: 700;
+}
+
+.itemCount {
+  background   : var(--color-primary);
+  color        : #fff;
+  font-size    : 11px;
+  font-weight  : 700;
+  border-radius: var(--radius-full);
+  min-width    : 20px;
+  height       : 20px;
+  display      : flex;
+  align-items  : center;
+  justify-content: center;
+  padding      : 0 5px;
+  animation    : badgePop 0.2s var(--transition-spring);
+}
+
+/* === TABLE SELECTOR === */
+.tableSelect {
+  position  : relative;
+  flex-shrink: 0;
+}
+
+.select {
+  appearance   : none;
+  background   : var(--color-bg);
+  border       : 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding      : 5px 26px 5px var(--space-3);
+  font-size    : 12.5px;
+  font-weight  : 500;
+  color        : var(--color-text);
+  cursor       : pointer;
+  outline      : none;
+  transition   : border-color var(--transition);
+  font-family  : inherit;
+  max-width    : 120px;
+}
+
+.select:focus { border-color: var(--color-primary); }
+
+.selectIcon {
+  position     : absolute;
+  right        : 8px;
+  top          : 50%;
+  transform    : translateY(-50%);
+  color        : var(--color-text-muted);
+  pointer-events: none;
+}
+
+/* === ITEM LIST === */
+.itemList {
+  flex      : 1;
+  overflow-y: auto;
+  padding   : 0 var(--space-4);
+  scrollbar-width: thin;
+  scrollbar-color: var(--color-border) transparent;
+}
+
+/* === EMPTY STATE === */
+.empty {
+  display        : flex;
+  flex-direction : column;
+  align-items    : center;
+  justify-content: center;
+  height         : 100%;
+  min-height     : 200px;
+  gap            : var(--space-2);
+  color          : var(--color-text-muted);
+  text-align     : center;
+  padding        : var(--space-8) var(--space-4);
+}
+
+.emptyIcon { color: var(--color-border-strong); }
+
+.emptyText {
+  font-size  : 14px;
+  font-weight: 600;
+  color      : var(--color-text-muted);
+}
+
+.emptySub {
+  font-size: 12px;
+  color    : var(--color-text-disabled);
+}
+
+/* === FOOTER (STICKY BOTTOM) === */
+.footer {
+  border-top: 1px solid var(--color-border);
+  padding   : var(--space-4);
+  flex-shrink: 0;
+  display   : flex;
+  flex-direction: column;
+  gap       : var(--space-3);
+  background: var(--color-card);
+}
+
+/* === SUMMARY ROWS === */
+.summaryRow, .discountRow {
+  display        : flex;
+  align-items    : center;
+  justify-content: space-between;
+  gap            : var(--space-3);
+}
+
+.summaryLabel {
+  font-size : 13px;
+  color     : var(--color-text-muted);
+}
+
+.summaryValue {
+  font-size    : 13.5px;
+  font-weight  : 600;
+  color        : var(--color-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.discountLabel {
+  font-size: 12px;
+  color    : var(--color-success-dark);
+}
+
+.discountValue {
+  font-size  : 13px;
+  font-weight: 600;
+  color      : var(--color-success-dark);
+  font-variant-numeric: tabular-nums;
+}
+
+/* === DISCOUNT INPUT === */
+.discountInput {
+  display    : flex;
+  align-items: center;
+  gap        : var(--space-2);
+}
+
+.discountTypePill {
+  display      : flex;
+  background   : var(--color-bg-secondary);
+  border-radius: var(--radius-sm);
+  overflow     : hidden;
+  border       : 1px solid var(--color-border);
+}
+
+.typeBtn {
+  padding    : 3px 8px;
+  font-size  : 12px;
+  font-weight: 500;
+  color      : var(--color-text-muted);
+  transition : background var(--transition), color var(--transition);
+}
+
+.typeBtn.typeActive {
+  background: var(--color-primary);
+  color     : #fff;
+}
+
+.discountField {
+  width        : 70px;
+  border       : 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  padding      : 4px var(--space-2);
+  font-size    : 13px;
+  font-weight  : 600;
+  text-align   : right;
+  outline      : none;
+  transition   : border-color var(--transition);
+  font-family  : inherit;
+  background   : var(--color-card);
+  color        : var(--color-text);
+}
+
+.discountField:focus { border-color: var(--color-primary); }
+
+/* === DIVIDER === */
+.divider {
+  height    : 1px;
+  background: var(--color-border);
+  margin    : var(--space-1) 0;
+}
+
+/* === TOTAL ROW === */
+.totalRow {
+  display        : flex;
+  align-items    : center;
+  justify-content: space-between;
+}
+
+.totalLabel {
+  font-size  : 16px;
+  font-weight: 700;
+  color      : var(--color-text);
+}
+
+.totalValue {
+  font-size    : 20px;
+  font-weight  : 800;
+  color        : var(--color-primary);
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* === PAYMENT BUTTONS === */
+.payBtns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap    : var(--space-2);
+}
+
+.payBtn {
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  gap            : var(--space-2);
+  padding        : 11px;
+  border-radius  : var(--radius-md);
+  font-size      : 14px;
+  font-weight    : 700;
+  transition     : transform var(--transition-spring),
+                   box-shadow var(--transition),
+                   opacity var(--transition);
+}
+
+.payBtn:hover:not(:disabled) {
+  transform : translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.payBtn:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.payBtn:disabled {
+  opacity: 0.45;
+  cursor : not-allowed;
+}
+
+.cashBtn {
+  background: linear-gradient(135deg, #10B981, #059669);
+  color     : #fff;
+  box-shadow: 0 3px 10px rgba(16, 185, 129, 0.35);
+}
+
+.qrisBtn {
+  background: linear-gradient(135deg, #2563EB, #1D4ED8);
+  color     : #fff;
+  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.35);
+}
+
+/* === CLEAR BUTTON === */
+.clearBtn {
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  gap            : var(--space-2);
+  color          : var(--color-text-muted);
+  font-size      : 12px;
+  padding        : var(--space-1) 0;
+  border-radius  : var(--radius-sm);
+  transition     : color var(--transition);
+}
+
+.clearBtn:hover {
+  color: var(--color-danger);
+}

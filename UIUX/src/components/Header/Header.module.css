@@ -1,0 +1,224 @@
+/* ============================================================
+   HEADER — CSS Module
+   ============================================================ */
+
+.header {
+  position       : fixed;
+  top            : 0;
+  right          : 0;
+  height         : var(--header-height);
+  background     : rgba(248, 250, 252, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom  : 1px solid var(--color-border);
+  display        : flex;
+  align-items    : center;
+  justify-content: space-between;
+  padding        : 0 var(--space-6);
+  z-index        : var(--z-header);
+  transition     : left var(--transition-slow), background var(--transition);
+  gap            : var(--space-4);
+}
+
+/* Dark mode glassmorphism */
+html[data-theme="dark"] .header {
+  background: rgba(13, 17, 23, 0.92);
+}
+
+/* === LEFT === */
+.left {
+  display    : flex;
+  align-items: center;
+  gap        : var(--space-3);
+  min-width  : 0;
+}
+
+/* === HAMBURGER (mobile only) === */
+.hamburger {
+  display        : none;
+  align-items    : center;
+  justify-content: center;
+  width          : 36px;
+  height         : 36px;
+  border-radius  : var(--radius-sm);
+  color          : var(--color-text-muted);
+  transition     : background var(--transition), color var(--transition);
+  flex-shrink    : 0;
+}
+
+.hamburger:hover { background: var(--color-bg-secondary); color: var(--color-text); }
+
+/* === PAGE TITLE === */
+.pageTitle {
+  font-size    : 16px;
+  font-weight  : 700;
+  color        : var(--color-text);
+  white-space  : nowrap;
+  overflow     : hidden;
+  text-overflow: ellipsis;
+  letter-spacing: -0.01em;
+}
+
+.pageBreadcrumb {
+  font-size  : 11.5px;
+  color      : var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.separator { color: var(--color-border-strong); margin: 0 2px; }
+
+/* === RIGHT === */
+.right {
+  display    : flex;
+  align-items: center;
+  gap        : var(--space-2);
+  flex-shrink: 0;
+}
+
+/* === ICON BUTTON === */
+.iconBtn {
+  position       : relative;
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  width          : 34px;
+  height         : 34px;
+  border-radius  : var(--radius-sm);
+  color          : var(--color-text-muted);
+  transition     : background var(--transition), color var(--transition);
+}
+
+.iconBtn:hover { background: var(--color-bg-secondary); color: var(--color-text); }
+
+/* Theme toggle special style */
+.themeBtn:hover { color: var(--color-primary); background: var(--color-primary-light); }
+
+/* === NOTIFICATION BADGE === */
+.notifBadge {
+  position     : absolute;
+  top          : 4px;
+  right        : 4px;
+  min-width    : 14px;
+  height       : 14px;
+  background   : var(--color-danger);
+  border-radius: var(--radius-full);
+  font-size    : 9px;
+  font-weight  : 700;
+  color        : #fff;
+  display      : flex;
+  align-items  : center;
+  justify-content: center;
+  padding      : 0 3px;
+  border       : 1.5px solid var(--color-bg);
+}
+
+/* === DIVIDER === */
+.divider {
+  width     : 1px;
+  height    : 20px;
+  background: var(--color-border);
+  flex-shrink: 0;
+}
+
+/* === SHIFT STATUS PILL === */
+.shiftPill {
+  display      : flex;
+  align-items  : center;
+  gap          : 5px;
+  background   : var(--color-success-light);
+  border       : 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: var(--radius-full);
+  padding      : 4px 12px;
+  white-space  : nowrap;
+}
+
+.shiftPill.shiftOff { background: var(--color-bg-secondary); border-color: var(--color-border); }
+
+.shiftLabel { font-size: 11.5px; font-weight: 600; color: var(--color-success-dark); }
+.shiftPill.shiftOff .shiftLabel { color: var(--color-text-disabled); }
+
+.shiftDot {
+  width        : 7px;
+  height       : 7px;
+  border-radius: 50%;
+  background   : var(--color-success);
+  animation    : pulse 2s infinite;
+  flex-shrink  : 0;
+}
+
+.shiftDotOff {
+  width        : 7px;
+  height       : 7px;
+  border-radius: 50%;
+  background   : var(--color-text-disabled);
+  flex-shrink  : 0;
+}
+
+/* === USER WRAP === */
+.userWrap { display: flex; align-items: center; gap: 3px; }
+
+/* === USER BUTTON === */
+.userBtn {
+  display      : flex;
+  align-items  : center;
+  gap          : var(--space-2);
+  padding      : 4px var(--space-2) 4px 4px;
+  border-radius: var(--radius-sm);
+  transition   : background var(--transition);
+  border       : 1px solid transparent;
+}
+
+.userBtn:hover { background: var(--color-bg-secondary); border-color: var(--color-border); }
+
+.userAvatar {
+  width          : 28px;
+  height         : 28px;
+  border-radius  : 50%;
+  background     : linear-gradient(135deg, #2563EB, #7C3AED);
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  font-size      : 11px;
+  font-weight    : 700;
+  color          : #FFFFFF;
+  flex-shrink    : 0;
+}
+
+.userInfo { display: flex; flex-direction: column; align-items: flex-start; gap: 1px; }
+
+.userName {
+  font-size    : 12.5px;
+  font-weight  : 600;
+  color        : var(--color-text);
+  max-width    : 100px;
+  overflow     : hidden;
+  text-overflow: ellipsis;
+  white-space  : nowrap;
+  line-height  : 1;
+}
+
+.userRole   { font-size: 10.5px; color: var(--color-text-muted); line-height: 1; }
+.chevronIcon{ color: var(--color-text-muted); opacity: 0.6; flex-shrink: 0; }
+
+/* === LOGOUT BUTTON === */
+.logoutBtn {
+  width          : 30px;
+  height         : 30px;
+  border-radius  : var(--radius-sm);
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  color          : var(--color-text-muted);
+  transition     : background var(--transition), color var(--transition);
+}
+
+.logoutBtn:hover { background: var(--color-danger-light); color: var(--color-danger); }
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .hamburger      { display: flex; }
+  .shiftPill      { display: none; }
+  .userInfo       { display: none; }
+  .pageBreadcrumb { display: none; }
+  .header         { padding: 0 var(--space-4); }
+}

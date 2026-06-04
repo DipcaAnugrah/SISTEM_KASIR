@@ -1,0 +1,72 @@
+/* ManajemenBahanBaku — page-specific styles */
+
+/* === ROW STATUS TINTS === */
+.rowHabis   { background: rgba(239, 68, 68, 0.04); }
+.rowMenipis { background: rgba(245, 158, 11, 0.04); }
+
+/* === STATUS BADGE === */
+.statusBadge {
+  display      : inline-flex;
+  align-items  : center;
+  gap          : 4px;
+  padding      : 3px 10px;
+  border-radius: var(--radius-full);
+  font-size    : 12px;
+  font-weight  : 600;
+  white-space  : nowrap;
+}
+
+.statusBadge.aman    { background: var(--color-success-light); color: var(--color-success-dark); }
+.statusBadge.menipis { background: var(--color-warning-light); color: var(--color-warning-dark); }
+.statusBadge.habis   { background: var(--color-danger-light);  color: var(--color-danger-dark);  }
+
+/* === RESTOCK BUTTON === */
+.restockBtn {
+  width          : 30px;
+  height         : 30px;
+  border-radius  : var(--radius-sm);
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  background     : var(--color-success-light);
+  color          : var(--color-success-dark);
+  transition     : background var(--transition), color var(--transition);
+}
+
+.restockBtn:hover { background: var(--color-success); color: #fff; }
+
+/* === TABLE FOOTER ALERT === */
+.alertBadge {
+  display    : flex;
+  align-items: center;
+  gap        : var(--space-1);
+  font-size  : 12.5px;
+  font-weight: 600;
+  color      : var(--color-warning-dark);
+  background : var(--color-warning-light);
+  padding    : 3px 10px;
+  border-radius: var(--radius-full);
+}
+
+/* === RESTOCK MODAL === */
+.restockInfo {
+  background   : var(--color-bg-secondary);
+  border       : 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding      : var(--space-4);
+  display      : flex;
+  flex-direction: column;
+  gap          : var(--space-1);
+}
+
+.restockBahan   { font-size: 15px; font-weight: 700; color: var(--color-text); }
+.restockCurrent { font-size: 13px; color: var(--color-text-muted); }
+
+.restockPreview {
+  padding      : var(--space-3) var(--space-4);
+  background   : var(--color-primary-light);
+  border-radius: var(--radius-md);
+  font-size    : 13.5px;
+  color        : var(--color-primary);
+  text-align   : center;
+}

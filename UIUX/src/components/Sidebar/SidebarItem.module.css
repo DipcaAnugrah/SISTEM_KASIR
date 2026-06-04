@@ -1,0 +1,233 @@
+/* ============================================================
+   SIDEBAR ITEM — CSS Module
+   ============================================================ */
+
+/* === SINGLE ITEM (tanpa children) === */
+.item {
+  display       : flex;
+  align-items   : center;
+  gap           : var(--space-3);
+  padding       : 9px var(--space-4);
+  border-radius : var(--radius-sm);
+  color         : var(--sidebar-text);
+  font-size     : 13.5px;
+  font-weight   : 450;
+  text-decoration: none;
+  cursor        : pointer;
+  transition    : background var(--transition),
+                  color var(--transition),
+                  padding var(--transition);
+  white-space   : nowrap;
+  overflow      : hidden;
+  position      : relative;
+  width         : 100%;
+  border        : none;
+  background    : transparent;
+  text-align    : left;
+  letter-spacing: 0.01em;
+  margin-bottom : 2px;
+}
+
+.item:hover {
+  background: var(--sidebar-item-hover);
+  color     : rgba(255, 255, 255, 0.85);
+}
+
+.item.active {
+  background: var(--sidebar-item-active);
+  color     : var(--sidebar-text-active);
+  font-weight: 600;
+}
+
+.item.active::before {
+  content      : '';
+  position     : absolute;
+  left         : 0;
+  top          : 6px;
+  bottom       : 6px;
+  width        : 3px;
+  background   : var(--color-primary);
+  border-radius: 0 var(--radius-full) var(--radius-full) 0;
+}
+
+/* === ICON === */
+.icon {
+  width      : 18px;
+  height     : 18px;
+  flex-shrink: 0;
+  opacity    : 0.7;
+  transition : opacity var(--transition);
+}
+
+.item:hover .icon,
+.item.active .icon {
+  opacity: 1;
+}
+
+/* === LABEL === */
+.label {
+  flex     : 1;
+  overflow : hidden;
+  text-overflow: ellipsis;
+  white-space  : nowrap;
+  transition   : opacity var(--transition), width var(--transition);
+}
+
+/* === COLLAPSED STATE === */
+.item.collapsed {
+  padding       : 9px;
+  justify-content: center;
+}
+
+.item.collapsed .label,
+.item.collapsed .chevron {
+  display: none;
+}
+
+.item.collapsed .icon {
+  opacity: 0.6;
+}
+
+.item.collapsed:hover .icon {
+  opacity: 1;
+}
+
+/* === GROUP HEADER (dengan children) === */
+.groupHeader {
+  display      : flex;
+  align-items  : center;
+  gap          : var(--space-3);
+  padding      : 9px var(--space-4);
+  border-radius: var(--radius-sm);
+  color        : var(--sidebar-text);
+  font-size    : 13.5px;
+  font-weight  : 450;
+  cursor       : pointer;
+  transition   : background var(--transition), color var(--transition);
+  user-select  : none;
+  width        : 100%;
+  border       : none;
+  background   : transparent;
+  text-align   : left;
+  white-space  : nowrap;
+  overflow     : hidden;
+  margin-bottom: 2px;
+}
+
+.groupHeader:hover {
+  background: var(--sidebar-item-hover);
+  color     : rgba(255, 255, 255, 0.85);
+}
+
+.groupHeader.groupOpen {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.groupLabel {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.chevron {
+  width      : 14px;
+  height     : 14px;
+  flex-shrink: 0;
+  opacity    : 0.5;
+  transition : transform var(--transition-slow), opacity var(--transition);
+}
+
+.groupHeader.groupOpen .chevron {
+  transform: rotate(90deg);
+  opacity  : 0.75;
+}
+
+/* === CHILDREN CONTAINER === */
+.children {
+  overflow      : hidden;
+  transition    : max-height var(--transition-slow),
+                  opacity var(--transition-slow);
+  max-height    : 0;
+  opacity       : 0;
+}
+
+.children.open {
+  max-height: 400px;
+  opacity   : 1;
+}
+
+.childItem {
+  display       : flex;
+  align-items   : center;
+  gap           : var(--space-3);
+  padding       : 8px var(--space-4) 8px 40px;
+  border-radius : var(--radius-sm);
+  color         : var(--sidebar-text);
+  font-size     : 13px;
+  text-decoration: none;
+  cursor        : pointer;
+  transition    : background var(--transition), color var(--transition);
+  white-space   : nowrap;
+  overflow      : hidden;
+  margin-bottom : 1px;
+  position      : relative;
+}
+
+.childItem:hover {
+  background: var(--sidebar-item-hover);
+  color     : rgba(255, 255, 255, 0.8);
+}
+
+.childItem.childActive {
+  background: var(--sidebar-item-active);
+  color     : var(--sidebar-text-active);
+  font-weight: 500;
+}
+
+.childItem.childActive::before {
+  content      : '';
+  position     : absolute;
+  left         : 0;
+  top          : 6px;
+  bottom       : 6px;
+  width        : 3px;
+  background   : var(--color-primary);
+  border-radius: 0 var(--radius-full) var(--radius-full) 0;
+}
+
+.childIcon {
+  width      : 15px;
+  height     : 15px;
+  flex-shrink: 0;
+  opacity    : 0.65;
+}
+
+.childItem:hover .childIcon,
+.childItem.childActive .childIcon {
+  opacity: 1;
+}
+
+/* === TOOLTIP saat collapsed === */
+.tooltip {
+  position      : absolute;
+  left          : calc(var(--sidebar-width-collapsed) + 8px);
+  top           : 50%;
+  transform     : translateY(-50%);
+  background    : #1E293B;
+  color         : rgba(255,255,255,0.9);
+  font-size     : 12px;
+  font-weight   : 500;
+  padding       : 5px 10px;
+  border-radius : var(--radius-sm);
+  white-space   : nowrap;
+  pointer-events: none;
+  opacity       : 0;
+  transition    : opacity var(--transition);
+  z-index       : var(--z-dropdown);
+  border        : 1px solid rgba(255,255,255,0.08);
+  box-shadow    : var(--shadow-lg);
+}
+
+.item.collapsed:hover .tooltip {
+  opacity: 1;
+}

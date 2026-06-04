@@ -1,0 +1,57 @@
+/* ============================================================
+   MAIN LAYOUT — CSS Module
+   ============================================================ */
+
+/* === APP SHELL === */
+.shell {
+  display   : flex;
+  min-height: 100vh;
+  background: var(--color-bg);
+}
+
+/* === MAIN CONTENT AREA === */
+.main {
+  flex          : 1;
+  display       : flex;
+  flex-direction: column;
+  min-width     : 0;
+  /* Left margin untuk memberi ruang sidebar */
+  margin-left   : var(--sidebar-width);
+  padding-top   : var(--header-height);
+  transition    : margin-left var(--transition-slow);
+}
+
+.main.sidebarCollapsed {
+  margin-left: var(--sidebar-width-collapsed);
+}
+
+/* === PAGE CONTENT === */
+.content {
+  flex       : 1;
+  padding    : var(--space-6);
+  animation  : fadeSlideIn 0.2s ease forwards;
+  max-width  : 1600px;
+  width      : 100%;
+  box-sizing : border-box;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .main {
+    margin-left: var(--sidebar-width-collapsed);
+  }
+
+  .main.sidebarCollapsed {
+    margin-left: var(--sidebar-width-collapsed);
+  }
+}
+
+@media (max-width: 768px) {
+  .main {
+    margin-left: 0 !important;
+  }
+
+  .content {
+    padding: var(--space-4);
+  }
+}

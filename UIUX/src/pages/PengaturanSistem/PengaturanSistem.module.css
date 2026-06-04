@@ -1,0 +1,170 @@
+/* PengaturanSistem.module.css */
+
+/* === PAGE HEADER === */
+.header {
+  display        : flex;
+  align-items    : flex-start;
+  justify-content: space-between;
+  margin-bottom  : var(--space-5);
+  gap            : var(--space-4);
+  flex-wrap      : wrap;
+}
+
+.headerTitle { font-size: 20px; font-weight: 800; color: var(--color-text); letter-spacing: -0.02em; }
+.headerSub   { font-size: 13px; color: var(--color-text-muted); margin-top: 2px; }
+
+.saveBtn {
+  display        : flex;
+  align-items    : center;
+  gap            : var(--space-2);
+  padding        : 10px var(--space-5);
+  background     : linear-gradient(135deg, var(--color-primary), #1D4ED8);
+  color          : #fff;
+  border-radius  : var(--radius-md);
+  font-size      : 14px;
+  font-weight    : 700;
+  box-shadow     : 0 3px 10px rgba(37,99,235,0.3);
+  transition     : transform var(--transition), box-shadow var(--transition);
+  white-space    : nowrap;
+}
+
+.saveBtn:hover { transform: translateY(-1px); box-shadow: 0 5px 16px rgba(37,99,235,0.4); }
+
+/* === LAYOUT: Sidebar + Content === */
+.layout {
+  display              : grid;
+  grid-template-columns: 220px 1fr;
+  gap                  : var(--space-5);
+  align-items          : start;
+}
+
+/* === TAB NAV (vertical sidebar) === */
+.tabNav {
+  background   : var(--color-card);
+  border       : 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding      : var(--space-2);
+  display      : flex;
+  flex-direction: column;
+  gap          : 2px;
+  box-shadow   : var(--shadow-xs);
+  position     : sticky;
+  top          : calc(var(--header-height) + var(--space-4));
+}
+
+.tabBtn {
+  display      : flex;
+  align-items  : center;
+  gap          : var(--space-3);
+  padding      : 10px var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size    : 13.5px;
+  font-weight  : 500;
+  color        : var(--color-text-muted);
+  transition   : background var(--transition), color var(--transition);
+  text-align   : left;
+}
+
+.tabBtn:hover { background: var(--color-bg-secondary); color: var(--color-text); }
+
+.tabBtn.tabActive {
+  background  : var(--color-primary-light);
+  color       : var(--color-primary);
+  font-weight : 700;
+}
+
+.tabIcon { flex-shrink: 0; }
+
+/* === TAB CONTENT === */
+.tabContent {
+  min-height: 400px;
+}
+
+/* === SECTION === */
+.section {
+  background   : var(--color-card);
+  border       : 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding      : var(--space-6);
+  box-shadow   : var(--shadow-card);
+}
+
+.sectionHeader {
+  display      : flex;
+  align-items  : center;
+  gap          : var(--space-3);
+  margin-bottom: var(--space-5);
+  color        : var(--color-text);
+}
+
+.sectionTitle {
+  font-size  : 16px;
+  font-weight: 700;
+  color      : var(--color-text);
+}
+
+.sectionSubtitle {
+  font-size    : 12px;
+  font-weight  : 700;
+  color        : var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  grid-column  : 1 / -1;
+  margin-top   : var(--space-2);
+}
+
+/* === FORM GRID === */
+.formGrid {
+  display              : grid;
+  grid-template-columns: 1fr 1fr;
+  gap                  : var(--space-4);
+}
+
+/* === INPUTS === */
+.input {
+  background   : var(--color-bg);
+  border       : 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding      : 10px var(--space-4);
+  font-size    : 13.5px;
+  color        : var(--color-text);
+  outline      : none;
+  transition   : border-color var(--transition), box-shadow var(--transition);
+  font-family  : inherit;
+  width        : 100%;
+}
+
+.input:focus {
+  border-color: var(--color-primary);
+  box-shadow  : 0 0 0 3px var(--color-primary-light);
+}
+
+.textarea { resize: vertical; min-height: 80px; }
+
+.inputGroup {
+  display    : flex;
+  align-items: stretch;
+}
+
+.inputGroup .input { border-radius: var(--radius-md) 0 0 var(--radius-md); }
+
+.inputSuffix {
+  background   : var(--color-bg-secondary);
+  border       : 1.5px solid var(--color-border);
+  border-left  : none;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding      : 0 12px;
+  font-size    : 13px;
+  color        : var(--color-text-muted);
+  display      : flex;
+  align-items  : center;
+  white-space  : nowrap;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+  .layout    { grid-template-columns: 1fr; }
+  .tabNav    { flex-direction: row; flex-wrap: wrap; position: static; }
+  .tabBtn    { flex: 1; justify-content: center; padding: 8px var(--space-2); font-size: 12.5px; }
+  .formGrid  { grid-template-columns: 1fr; }
+}

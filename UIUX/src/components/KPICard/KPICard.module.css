@@ -1,0 +1,107 @@
+/* ============================================================
+   KPI CARD — CSS Module
+   ============================================================ */
+
+.card {
+  background    : var(--color-card);
+  border        : 1px solid var(--color-border);
+  border-radius : var(--radius-lg);
+  padding       : var(--space-5);
+  display       : flex;
+  flex-direction: column;
+  gap           : var(--space-3);
+  box-shadow    : var(--shadow-card);
+  transition    : transform var(--transition),
+                  box-shadow var(--transition),
+                  border-color var(--transition);
+  cursor        : default;
+  position      : relative;
+  overflow      : hidden;
+}
+
+.card:hover {
+  transform   : translateY(-2px);
+  box-shadow  : var(--shadow-md);
+  border-color: var(--color-border-strong);
+}
+
+/* === TOP ROW: icon + trend === */
+.top {
+  display        : flex;
+  align-items    : flex-start;
+  justify-content: space-between;
+}
+
+/* === ICON WRAPPER === */
+.iconWrap {
+  width          : 44px;
+  height         : 44px;
+  border-radius  : var(--radius-md);
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  flex-shrink    : 0;
+}
+
+.iconWrap.primary { background: var(--color-primary-light); color: var(--color-primary); }
+.iconWrap.success { background: var(--color-success-light); color: var(--color-success); }
+.iconWrap.warning { background: var(--color-warning-light); color: var(--color-warning-dark); }
+.iconWrap.info    { background: #EFF6FF;                    color: #3B82F6; }
+.iconWrap.danger  { background: var(--color-danger-light);  color: var(--color-danger); }
+
+/* === TREND BADGE === */
+.trend {
+  display      : flex;
+  align-items  : center;
+  gap          : 2px;
+  padding      : 3px 8px;
+  border-radius: var(--radius-full);
+  font-size    : 11.5px;
+  font-weight  : 600;
+  flex-shrink  : 0;
+}
+
+.trend.up   { background: var(--color-success-light); color: var(--color-success-dark); }
+.trend.down { background: var(--color-danger-light);  color: var(--color-danger-dark);  }
+.trend.flat { background: var(--color-bg-secondary);  color: var(--color-text-muted);   }
+
+/* === VALUE === */
+.value {
+  font-size    : 26px;
+  font-weight  : 700;
+  color        : var(--color-text);
+  letter-spacing: -0.03em;
+  line-height  : 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* === LABEL === */
+.label {
+  font-size : 13px;
+  color     : var(--color-text-muted);
+  font-weight: 400;
+}
+
+/* === DECORATIVE CORNER SHAPE === */
+.card::after {
+  content      : '';
+  position     : absolute;
+  right        : -20px;
+  bottom       : -20px;
+  width        : 80px;
+  height       : 80px;
+  border-radius: 50%;
+  opacity      : 0.04;
+  transition   : opacity var(--transition), transform var(--transition);
+}
+
+.card:hover::after {
+  opacity  : 0.07;
+  transform: scale(1.2);
+}
+
+.card.primary::after { background: var(--color-primary); }
+.card.success::after { background: var(--color-success); }
+.card.warning::after { background: var(--color-warning); }
+.card.info::after    { background: #3B82F6; }
+.card.danger::after  { background: var(--color-danger); }

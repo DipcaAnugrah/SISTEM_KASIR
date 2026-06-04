@@ -1,0 +1,99 @@
+/* ============================================================
+   AUTH LAYOUT — CSS Module
+   ============================================================ */
+
+.wrapper {
+  min-height        : 100vh;
+  display           : flex;
+  flex-direction    : column;
+  align-items       : center;
+  justify-content   : center;
+  background        : linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
+  position          : relative;
+  overflow          : hidden;
+  padding           : var(--space-6);
+}
+
+/* === DECORATIVE BACKGROUND ORBS === */
+.bgOrb1,
+.bgOrb2,
+.bgOrb3 {
+  position      : absolute;
+  border-radius : 50%;
+  filter        : blur(80px);
+  pointer-events: none;
+  z-index       : 0;
+}
+
+.bgOrb1 {
+  width     : 500px;
+  height    : 500px;
+  background: rgba(37, 99, 235, 0.15);
+  top       : -150px;
+  right     : -100px;
+  animation : orbFloat1 8s ease-in-out infinite alternate;
+}
+
+.bgOrb2 {
+  width     : 400px;
+  height    : 400px;
+  background: rgba(16, 185, 129, 0.08);
+  bottom    : -120px;
+  left      : -80px;
+  animation : orbFloat2 10s ease-in-out infinite alternate;
+}
+
+.bgOrb3 {
+  width     : 300px;
+  height    : 300px;
+  background: rgba(245, 158, 11, 0.06);
+  top       : 50%;
+  left      : 50%;
+  transform : translate(-50%, -50%);
+  animation : orbFloat3 12s ease-in-out infinite alternate;
+}
+
+@keyframes orbFloat1 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(-30px, 30px) scale(1.1); }
+}
+@keyframes orbFloat2 {
+  from { transform: translate(0, 0) scale(1); }
+  to   { transform: translate(20px, -20px) scale(1.08); }
+}
+@keyframes orbFloat3 {
+  from { transform: translate(-50%, -50%) scale(1); }
+  to   { transform: translate(-50%, -50%) scale(1.15); }
+}
+
+/* === MAIN CONTENT === */
+.main {
+  position  : relative;
+  z-index   : 1;
+  width     : 100%;
+  max-width : 420px;
+  animation : slideInUp 0.4s ease forwards;
+}
+
+/* === FOOTER === */
+.footer {
+  position  : absolute;
+  bottom    : var(--space-5);
+  z-index   : 1;
+  color     : rgba(255, 255, 255, 0.25);
+  font-size : 12px;
+  text-align: center;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 480px) {
+  .wrapper {
+    padding    : var(--space-4);
+    align-items: stretch;
+    justify-content: flex-start;
+    padding-top: var(--space-10);
+  }
+  .main {
+    max-width: 100%;
+  }
+}

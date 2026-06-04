@@ -1,0 +1,374 @@
+/* ============================================================
+   GLOBAL CSS — Warkop Djoeragan POS
+   Design Tokens · Reset · Typography · Utilities
+   ============================================================ */
+
+/* === GOOGLE FONTS IMPORT === */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+/* === CSS DESIGN TOKENS === */
+:root {
+  /* --- Color Palette --- */
+  --color-primary        : #2563EB;
+  --color-primary-light  : #EFF6FF;
+  --color-primary-dark   : #1D4ED8;
+  --color-primary-hover  : #1E40AF;
+
+  --color-success        : #10B981;
+  --color-success-light  : #ECFDF5;
+  --color-success-dark   : #059669;
+
+  --color-warning        : #F59E0B;
+  --color-warning-light  : #FFFBEB;
+  --color-warning-dark   : #D97706;
+
+  --color-danger         : #EF4444;
+  --color-danger-light   : #FEF2F2;
+  --color-danger-dark    : #DC2626;
+
+  --color-info           : #06B6D4;
+  --color-info-light     : #ECFEFF;
+
+  /* --- Surface --- */
+  --color-bg             : #F8FAFC;
+  --color-bg-secondary   : #F1F5F9;
+  --color-card           : #FFFFFF;
+  --color-card-hover     : #FAFBFF;
+
+  /* --- Text --- */
+  --color-text           : #0F172A;
+  --color-text-secondary : #1E293B;
+  --color-text-muted     : #64748B;
+  --color-text-disabled  : #94A3B8;
+  --color-text-inverse   : #FFFFFF;
+
+  /* --- Border --- */
+  --color-border         : #E2E8F0;
+  --color-border-strong  : #CBD5E1;
+  --color-border-focus   : #2563EB;
+
+  /* --- Sidebar --- */
+  --sidebar-bg           : #0F172A;
+  --sidebar-item-hover   : rgba(255,255,255,0.06);
+  --sidebar-item-active  : rgba(37,99,235,0.18);
+  --sidebar-text         : #94A3B8;
+  --sidebar-text-active  : #FFFFFF;
+  --sidebar-width        : 240px;
+  --sidebar-width-collapsed: 64px;
+  --header-height        : 60px;
+
+  /* --- Radius --- */
+  --radius-xs            : 4px;
+  --radius-sm            : 8px;
+  --radius-md            : 12px;
+  --radius-lg            : 16px;
+  --radius-xl            : 20px;
+  --radius-full          : 9999px;
+
+  /* --- Shadow --- */
+  --shadow-xs            : 0 1px 2px rgba(0,0,0,0.05);
+  --shadow-sm            : 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md            : 0 4px 6px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.04);
+  --shadow-lg            : 0 10px 15px rgba(0,0,0,0.08), 0 4px 6px rgba(0,0,0,0.04);
+  --shadow-xl            : 0 20px 25px rgba(0,0,0,0.10), 0 8px 10px rgba(0,0,0,0.04);
+  --shadow-card          : 0 1px 3px rgba(0,0,0,0.08);
+
+  /* --- Transition --- */
+  --transition           : 0.15s ease;
+  --transition-slow      : 0.25s ease;
+  --transition-spring    : 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* --- Z-index layers --- */
+  --z-dropdown           : 100;
+  --z-sidebar            : 200;
+  --z-header             : 300;
+  --z-modal              : 400;
+  --z-toast              : 500;
+
+  /* --- Spacing scale --- */
+  --space-1              : 4px;
+  --space-2              : 8px;
+  --space-3              : 12px;
+  --space-4              : 16px;
+  --space-5              : 20px;
+  --space-6              : 24px;
+  --space-7              : 28px;
+  --space-8              : 32px;
+  --space-10             : 40px;
+  --space-12             : 48px;
+  --space-16             : 64px;
+
+  /* --- Extra surfaces --- */
+  --color-card-elevated  : #FFFFFF;
+  --color-overlay        : rgba(15, 23, 42, 0.45);
+
+  /* --- Semantic status (aliases) --- */
+  --color-info-dark      : #0891B2;
+}
+
+/* ============================================================
+   DARK MODE — html[data-theme="dark"]
+   Hanya override surface, text, border. Accent colors tetap sama.
+   ============================================================ */
+
+html[data-theme="dark"] {
+  /* --- Surface --- */
+  --color-bg             : #0D1117;
+  --color-bg-secondary   : #161B22;
+  --color-card           : #1C2128;
+  --color-card-hover     : #22272E;
+  --color-card-elevated  : #2D333B;
+  --color-overlay        : rgba(0, 0, 0, 0.6);
+
+  /* --- Text --- */
+  --color-text           : #E6EDF3;
+  --color-text-secondary : #CDD9E5;
+  --color-text-muted     : #8B949E;
+  --color-text-disabled  : #6E7681;
+  --color-text-inverse   : #0D1117;
+
+  /* --- Border --- */
+  --color-border         : #30363D;
+  --color-border-strong  : #484F58;
+  --color-border-focus   : #388BFD;
+
+  /* --- Sidebar (deeper dark in dark mode) --- */
+  --sidebar-bg           : #010409;
+  --sidebar-item-hover   : rgba(255,255,255,0.08);
+  --sidebar-item-active  : rgba(56, 139, 253, 0.15);
+  --sidebar-text         : #8B949E;
+  --sidebar-text-active  : #E6EDF3;
+
+  /* --- Semantic colors: tint opacity in dark bg --- */
+  --color-primary-light  : rgba(37, 99, 235, 0.18);
+  --color-success-light  : rgba(16, 185, 129, 0.15);
+  --color-warning-light  : rgba(245, 158, 11, 0.15);
+  --color-danger-light   : rgba(239, 68, 68, 0.15);
+  --color-info-light     : rgba(6, 182, 212, 0.15);
+
+  /* --- Shadow (more pronounced in dark) --- */
+  --shadow-xs            : 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-sm            : 0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md            : 0 4px 6px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.3);
+  --shadow-lg            : 0 10px 15px rgba(0,0,0,0.5), 0 4px 6px rgba(0,0,0,0.3);
+  --shadow-xl            : 0 20px 25px rgba(0,0,0,0.55), 0 8px 10px rgba(0,0,0,0.3);
+  --shadow-card          : 0 1px 3px rgba(0,0,0,0.4);
+}
+
+
+/* === CSS RESET === */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* === TYPOGRAPHY === */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-text);
+}
+
+h1 { font-size: 24px; font-weight: 700; }
+h2 { font-size: 20px; }
+h3 { font-size: 18px; }
+h4 { font-size: 16px; }
+h5 { font-size: 14px; }
+h6 { font-size: 12px; font-weight: 500; text-transform: uppercase; letter-spacing: 0.05em; }
+
+p { line-height: 1.6; }
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+a:hover { color: var(--color-primary-dark); }
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 14px;
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul, ol { list-style: none; }
+
+/* === SCROLLBAR === */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--color-border-strong);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--color-text-disabled); }
+
+/* === FOCUS VISIBLE === */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+  border-radius: var(--radius-xs);
+}
+
+/* === UTILITY CLASSES === */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-primary    { color: var(--color-primary); }
+.text-success    { color: var(--color-success); }
+.text-warning    { color: var(--color-warning); }
+.text-danger     { color: var(--color-danger); }
+.text-muted      { color: var(--color-text-muted); }
+
+.font-medium  { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold    { font-weight: 700; }
+
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* === NUMBER FORMAT (Rupiah) === */
+.amount {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: 'tnum';
+}
+
+/* === PAGE TRANSITION === */
+.page-enter {
+  animation: fadeSlideIn 0.2s ease forwards;
+}
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* === FLEX UTILITIES === */
+.flex         { display: flex; }
+.flex-col     { display: flex; flex-direction: column; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.gap-2        { gap: var(--space-2); }
+.gap-3        { gap: var(--space-3); }
+.gap-4        { gap: var(--space-4); }
+.flex-1       { flex: 1; }
+.shrink-0     { flex-shrink: 0; }
+.w-full       { width: 100%; }
+
+/* === SKELETON LOADER === */
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--color-bg-secondary) 25%,
+    var(--color-border) 37%,
+    var(--color-bg-secondary) 63%
+  );
+  background-size: 400% 100%;
+  animation: shimmer 1.4s ease infinite;
+  border-radius: var(--radius-sm);
+}
+
+/* === BADGE UTILITIES === */
+.badge {
+  display      : inline-flex;
+  align-items  : center;
+  padding      : 3px 8px;
+  border-radius: var(--radius-full);
+  font-size    : 11.5px;
+  font-weight  : 600;
+  white-space  : nowrap;
+}
+
+.badge-primary { background: var(--color-primary-light); color: var(--color-primary); }
+.badge-success { background: var(--color-success-light); color: var(--color-success-dark); }
+.badge-warning { background: var(--color-warning-light); color: var(--color-warning-dark); }
+.badge-danger  { background: var(--color-danger-light);  color: var(--color-danger-dark); }
+.badge-neutral { background: var(--color-bg-secondary);  color: var(--color-text-muted); }
+
+/* === DIVIDER === */
+.divider-h {
+  width: 100%;
+  height: 1px;
+  background: var(--color-border);
+  flex-shrink: 0;
+}
+
+.divider-v {
+  width: 1px;
+  height: 100%;
+  background: var(--color-border);
+  flex-shrink: 0;
+}
+
+/* === SURFACE CARD === */
+.card-base {
+  background   : var(--color-card);
+  border       : 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow   : var(--shadow-card);
+}
+
+/* === COLOR-MIX FALLBACK for older browsers === */
+@supports not (background: color-mix(in srgb, red, blue)) {
+  /* Fallback untuk CategoryPanel active state */
+  .cat-active-kopi    { background: #FEF3C7; color: #92400E; }
+  .cat-active-nonkopi { background: #D1FAE5; color: #065F46; }
+  .cat-active-makanan { background: #FCE7F3; color: #9D174D; }
+  .cat-active-snack   { background: #FEF3C7; color: #92400E; }
+}
+
+/* === PRINT STYLES === */
+@media print {
+  .no-print { display: none !important; }
+  body { background: white; color: black; }
+}

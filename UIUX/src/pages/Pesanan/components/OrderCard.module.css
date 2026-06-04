@@ -1,0 +1,174 @@
+/* ============================================================
+   ORDER CARD — CSS Module
+   ============================================================ */
+
+.card {
+  background   : var(--color-card);
+  border       : 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding      : var(--space-4);
+  transition   : box-shadow var(--transition), border-color var(--transition);
+  animation    : fadeSlideIn 0.2s ease forwards;
+}
+
+.card:hover {
+  box-shadow  : var(--shadow-md);
+  border-color: var(--color-border-strong);
+}
+
+.card.aktif          { border-left: 3px solid var(--color-primary); }
+.card.menunggu_bayar { border-left: 3px solid var(--color-danger); }
+.card.selesai        { border-left: 3px solid var(--color-success); opacity: 0.75; }
+
+/* === HEADER === */
+.header {
+  display        : flex;
+  align-items    : flex-start;
+  justify-content: space-between;
+  margin-bottom  : var(--space-3);
+  gap            : var(--space-3);
+}
+
+.headerLeft {
+  display    : flex;
+  align-items: center;
+  gap        : var(--space-3);
+}
+
+.mejaBadge {
+  font-size    : 18px;
+  font-weight  : 800;
+  color        : var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.kasirName {
+  font-size : 12px;
+  color     : var(--color-text-muted);
+  margin-top: 1px;
+}
+
+/* === STATUS BADGE === */
+.status {
+  display      : flex;
+  align-items  : center;
+  gap          : 5px;
+  padding      : 4px 10px;
+  border-radius: var(--radius-full);
+  font-size    : 11.5px;
+  font-weight  : 600;
+  white-space  : nowrap;
+  flex-shrink  : 0;
+}
+
+.statusDot {
+  width        : 6px;
+  height       : 6px;
+  border-radius: 50%;
+  flex-shrink  : 0;
+}
+
+.status.aktif          { background: var(--color-primary-light); color: var(--color-primary-dark); }
+.status.aktif .statusDot { background: var(--color-primary); animation: pulse 2s infinite; }
+
+.status.menunggu_bayar { background: var(--color-danger-light); color: var(--color-danger-dark); }
+.status.menunggu_bayar .statusDot { background: var(--color-danger); animation: pulse 1.5s infinite; }
+
+.status.selesai        { background: var(--color-success-light); color: var(--color-success-dark); }
+.status.selesai .statusDot { background: var(--color-success); }
+
+/* === ITEMS LIST === */
+.items {
+  display       : flex;
+  flex-wrap     : wrap;
+  gap           : var(--space-1);
+  margin-bottom : var(--space-3);
+}
+
+.itemChip {
+  background   : var(--color-bg-secondary);
+  border       : 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding      : 3px 10px;
+  font-size    : 12px;
+  color        : var(--color-text-secondary);
+}
+
+/* === FOOTER === */
+.footer {
+  display        : flex;
+  align-items    : center;
+  justify-content: space-between;
+  padding-top    : var(--space-3);
+  border-top     : 1px solid var(--color-border);
+  gap            : var(--space-3);
+}
+
+.meta {
+  display    : flex;
+  align-items: center;
+  gap        : var(--space-3);
+  flex-wrap  : wrap;
+}
+
+.metaItem {
+  display    : flex;
+  align-items: center;
+  gap        : 4px;
+  font-size  : 12px;
+  color      : var(--color-text-muted);
+}
+
+.metaIcon { color: var(--color-text-disabled); }
+
+.total {
+  font-size    : 16px;
+  font-weight  : 800;
+  color        : var(--color-text);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  white-space  : nowrap;
+}
+
+/* === ACTION BUTTONS === */
+.actions {
+  display    : flex;
+  align-items: center;
+  gap        : var(--space-2);
+  flex-shrink: 0;
+}
+
+.actionBtn {
+  display      : flex;
+  align-items  : center;
+  gap          : var(--space-1);
+  padding      : 6px 12px;
+  border-radius: var(--radius-sm);
+  font-size    : 12.5px;
+  font-weight  : 600;
+  transition   : background var(--transition), transform var(--transition);
+  white-space  : nowrap;
+}
+
+.actionBtn:hover { transform: translateY(-1px); }
+.actionBtn:active { transform: scale(0.97); }
+
+.btnPrimary {
+  background: var(--color-primary);
+  color     : #fff;
+  box-shadow: 0 2px 6px rgba(37,99,235,0.3);
+}
+
+.btnSuccess {
+  background: var(--color-success);
+  color     : #fff;
+  box-shadow: 0 2px 6px rgba(16,185,129,0.3);
+}
+
+.btnGhost {
+  background: var(--color-bg-secondary);
+  color     : var(--color-text-muted);
+  border    : 1px solid var(--color-border);
+}
+
+.btnGhost:hover { color: var(--color-text); background: var(--color-border); }

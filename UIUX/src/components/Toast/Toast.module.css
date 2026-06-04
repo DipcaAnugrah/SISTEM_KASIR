@@ -1,0 +1,134 @@
+/* ============================================================
+   TOAST — CSS Module
+   ============================================================ */
+
+/* === CONTAINER (fixed top-right) === */
+.container {
+  position      : fixed;
+  top           : calc(var(--header-height) + var(--space-4));
+  right         : var(--space-5);
+  display       : flex;
+  flex-direction: column;
+  gap           : var(--space-2);
+  z-index       : var(--z-toast);
+  pointer-events: none;
+  width         : 320px;
+  max-width     : calc(100vw - var(--space-8));
+}
+
+/* === SINGLE TOAST === */
+.toast {
+  display        : flex;
+  align-items    : flex-start;
+  gap            : var(--space-3);
+  padding        : var(--space-3) var(--space-4);
+  border-radius  : var(--radius-md);
+  box-shadow     : var(--shadow-lg);
+  pointer-events : all;
+  cursor         : pointer;
+  position       : relative;
+  overflow       : hidden;
+  border         : 1px solid transparent;
+  animation      : toastIn 0.3s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  transition     : transform 0.15s ease, opacity 0.15s ease;
+}
+
+.toast:hover {
+  transform: translateX(-2px);
+}
+
+.toast.exiting {
+  animation: toastOut 0.25s ease forwards;
+}
+
+/* === VARIANTS === */
+.success {
+  background  : #FFFFFF;
+  border-color: rgba(16, 185, 129, 0.25);
+}
+.error {
+  background  : #FFFFFF;
+  border-color: rgba(239, 68, 68, 0.25);
+}
+.warning {
+  background  : #FFFFFF;
+  border-color: rgba(245, 158, 11, 0.25);
+}
+.info {
+  background  : #FFFFFF;
+  border-color: rgba(37, 99, 235, 0.2);
+}
+
+/* === ICON WRAPPER === */
+.iconWrap {
+  width          : 32px;
+  height         : 32px;
+  border-radius  : var(--radius-sm);
+  display        : flex;
+  align-items    : center;
+  justify-content: center;
+  flex-shrink    : 0;
+  margin-top     : 1px;
+}
+
+.success .iconWrap { background: var(--color-success-light); color: var(--color-success-dark); }
+.error   .iconWrap { background: var(--color-danger-light);  color: var(--color-danger-dark);  }
+.warning .iconWrap { background: var(--color-warning-light); color: var(--color-warning-dark); }
+.info    .iconWrap { background: var(--color-primary-light); color: var(--color-primary-dark); }
+
+/* === CONTENT === */
+.content {
+  flex    : 1;
+  min-width: 0;
+}
+
+.message {
+  font-size  : 13.5px;
+  font-weight: 500;
+  color      : var(--color-text-secondary);
+  line-height: 1.4;
+}
+
+/* === CLOSE BUTTON === */
+.closeBtn {
+  color      : var(--color-text-disabled);
+  padding    : 2px;
+  border-radius: var(--radius-xs);
+  flex-shrink: 0;
+  transition : color var(--transition), background var(--transition);
+  margin-top : 1px;
+}
+
+.closeBtn:hover {
+  color     : var(--color-text-muted);
+  background: var(--color-bg-secondary);
+}
+
+/* === PROGRESS BAR === */
+.progress {
+  position     : absolute;
+  bottom       : 0;
+  left         : 0;
+  height       : 3px;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  animation    : progressShrink linear forwards;
+}
+
+.success .progress { background: var(--color-success); }
+.error   .progress { background: var(--color-danger); }
+.warning .progress { background: var(--color-warning); }
+.info    .progress { background: var(--color-primary); }
+
+@keyframes progressShrink {
+  from { width: 100%; }
+  to   { width: 0%; }
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 480px) {
+  .container {
+    right: var(--space-3);
+    left : var(--space-3);
+    width: auto;
+  }
+}

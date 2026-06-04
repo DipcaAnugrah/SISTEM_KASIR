@@ -1,0 +1,110 @@
+/* ============================================================
+   DASHBOARD PAGE — CSS Module
+   ============================================================ */
+
+/* === KPI GRID === */
+.kpiGrid {
+  display              : grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap                  : var(--space-5);
+  margin-bottom        : var(--space-5);
+}
+
+/* === MAIN GRID (below KPI) === */
+.mainGrid {
+  display              : grid;
+  grid-template-columns: 1fr 340px;
+  gap                  : var(--space-5);
+  margin-bottom        : var(--space-5);
+}
+
+/* === CHART STACK === */
+.chartStack {
+  display       : flex;
+  flex-direction: column;
+  gap           : var(--space-5);
+}
+
+/* === BOTTOM GRID (Stok + Activity + Shifts) === */
+.bottomGrid {
+  display              : grid;
+  grid-template-columns: 1fr 1fr 340px;
+  gap                  : var(--space-5);
+}
+
+/* === DATE HEADER (Page top bar) === */
+.pageTop {
+  display        : flex;
+  align-items    : flex-start;
+  justify-content: space-between;
+  margin-bottom  : var(--space-6);
+  gap            : var(--space-4);
+}
+
+.greeting {
+  font-size  : 22px;
+  font-weight: 700;
+  color      : var(--color-text);
+  letter-spacing: -0.02em;
+}
+
+.greetingSub {
+  font-size  : 14px;
+  color      : var(--color-text-muted);
+  margin-top : 2px;
+}
+
+.dateChip {
+  display      : flex;
+  align-items  : center;
+  gap          : var(--space-2);
+  background   : var(--color-card);
+  border       : 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding      : 7px var(--space-4);
+  font-size    : 13px;
+  font-weight  : 500;
+  color        : var(--color-text-muted);
+  box-shadow   : var(--shadow-xs);
+  flex-shrink  : 0;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 1280px) {
+  .kpiGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .bottomGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .kpiGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
+  .bottomGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pageTop {
+    flex-direction: column;
+  }
+
+  .greeting {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .kpiGrid {
+    grid-template-columns: 1fr;
+  }
+}
