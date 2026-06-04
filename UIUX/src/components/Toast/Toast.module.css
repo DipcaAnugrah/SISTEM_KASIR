@@ -43,20 +43,20 @@
 
 /* === VARIANTS === */
 .success {
-  background  : #FFFFFF;
-  border-color: rgba(16, 185, 129, 0.25);
+  background  : var(--color-card);
+  border-color: rgba(93, 138, 94, 0.28);
 }
 .error {
-  background  : #FFFFFF;
-  border-color: rgba(239, 68, 68, 0.25);
+  background  : var(--color-card);
+  border-color: rgba(184, 84, 80, 0.28);
 }
 .warning {
-  background  : #FFFFFF;
-  border-color: rgba(245, 158, 11, 0.25);
+  background  : var(--color-card);
+  border-color: rgba(192, 139, 58, 0.28);
 }
 .info {
-  background  : #FFFFFF;
-  border-color: rgba(37, 99, 235, 0.2);
+  background  : var(--color-card);
+  border-color: rgba(111, 78, 55, 0.22);
 }
 
 /* === ICON WRAPPER === */

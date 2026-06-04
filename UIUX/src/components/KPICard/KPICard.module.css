@@ -46,7 +46,7 @@
 .iconWrap.primary { background: var(--color-primary-light); color: var(--color-primary); }
 .iconWrap.success { background: var(--color-success-light); color: var(--color-success); }
 .iconWrap.warning { background: var(--color-warning-light); color: var(--color-warning-dark); }
-.iconWrap.info    { background: #EFF6FF;                    color: #3B82F6; }
+.iconWrap.info    { background: #EEE8DF;                    color: #8B7355; }
 .iconWrap.danger  { background: var(--color-danger-light);  color: var(--color-danger); }
 
 /* === TREND BADGE === */
@@ -103,5 +103,5 @@
 .card.primary::after { background: var(--color-primary); }
 .card.success::after { background: var(--color-success); }
 .card.warning::after { background: var(--color-warning); }
-.card.info::after    { background: #3B82F6; }
+.card.info::after    { background: #8B7355; }
 .card.danger::after  { background: var(--color-danger); }

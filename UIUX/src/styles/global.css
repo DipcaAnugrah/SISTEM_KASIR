@@ -8,50 +8,50 @@
 
 /* === CSS DESIGN TOKENS === */
 :root {
-  /* --- Color Palette --- */
-  --color-primary        : #2563EB;
-  --color-primary-light  : #EFF6FF;
-  --color-primary-dark   : #1D4ED8;
-  --color-primary-hover  : #1E40AF;
+  /* --- Color Palette (Brown · Cream · White Theme) --- */
+  --color-primary        : #6F4E37;   /* Coffee brown */
+  --color-primary-light  : #F5EFE6;   /* Cream tint */
+  --color-primary-dark   : #4E3524;   /* Dark espresso */
+  --color-primary-hover  : #5A3D28;   /* Hover brown */
 
-  --color-success        : #10B981;
-  --color-success-light  : #ECFDF5;
-  --color-success-dark   : #059669;
+  --color-success        : #5D8A5E;   /* Earthy green */
+  --color-success-light  : #EDF5EE;
+  --color-success-dark   : #3E6B40;
 
-  --color-warning        : #F59E0B;
-  --color-warning-light  : #FFFBEB;
-  --color-warning-dark   : #D97706;
+  --color-warning        : #C08B3A;   /* Warm amber */
+  --color-warning-light  : #FDF4E3;
+  --color-warning-dark   : #9A6B1F;
 
-  --color-danger         : #EF4444;
-  --color-danger-light   : #FEF2F2;
-  --color-danger-dark    : #DC2626;
+  --color-danger         : #B85450;   /* Terracotta red */
+  --color-danger-light   : #FAF0EF;
+  --color-danger-dark    : #8C3A36;
 
-  --color-info           : #06B6D4;
-  --color-info-light     : #ECFEFF;
+  --color-info           : #9B8B7A;   /* Warm mushroom taupe */
+  --color-info-light     : #EEE8DF;
 
   /* --- Surface --- */
-  --color-bg             : #F8FAFC;
-  --color-bg-secondary   : #F1F5F9;
-  --color-card           : #FFFFFF;
-  --color-card-hover     : #FAFBFF;
+  --color-bg             : #FAF7F2;   /* Warm cream background */
+  --color-bg-secondary   : #F2EBE0;   /* Slightly deeper cream */
+  --color-card           : #FFFFFF;   /* Pure white cards */
+  --color-card-hover     : #FFFDF9;   /* Barely warm white */
 
   /* --- Text --- */
-  --color-text           : #0F172A;
-  --color-text-secondary : #1E293B;
-  --color-text-muted     : #64748B;
-  --color-text-disabled  : #94A3B8;
+  --color-text           : #2C1A0E;   /* Deep espresso text */
+  --color-text-secondary : #3D2B1A;   /* Dark brown secondary */
+  --color-text-muted     : #8B7355;   /* Warm taupe muted */
+  --color-text-disabled  : #C4B49A;   /* Light latte disabled */
   --color-text-inverse   : #FFFFFF;
 
   /* --- Border --- */
-  --color-border         : #E2E8F0;
-  --color-border-strong  : #CBD5E1;
-  --color-border-focus   : #2563EB;
+  --color-border         : #E5D9C8;   /* Warm sand border */
+  --color-border-strong  : #C9B99A;   /* Darker sand */
+  --color-border-focus   : #6F4E37;   /* Brown focus ring */
 
   /* --- Sidebar --- */
-  --sidebar-bg           : #0F172A;
-  --sidebar-item-hover   : rgba(255,255,255,0.06);
-  --sidebar-item-active  : rgba(37,99,235,0.18);
-  --sidebar-text         : #94A3B8;
+  --sidebar-bg           : #2C1A0E;   /* Deep espresso sidebar */
+  --sidebar-item-hover   : rgba(255,255,255,0.07);
+  --sidebar-item-active  : rgba(200,150,90,0.22);
+  --sidebar-text         : #B8A08A;   /* Warm latte text */
   --sidebar-text-active  : #FFFFFF;
   --sidebar-width        : 240px;
   --sidebar-width-collapsed: 64px;
@@ -65,13 +65,13 @@
   --radius-xl            : 20px;
   --radius-full          : 9999px;
 
-  /* --- Shadow --- */
-  --shadow-xs            : 0 1px 2px rgba(0,0,0,0.05);
-  --shadow-sm            : 0 1px 3px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.04);
-  --shadow-md            : 0 4px 6px rgba(0,0,0,0.06), 0 2px 4px rgba(0,0,0,0.04);
-  --shadow-lg            : 0 10px 15px rgba(0,0,0,0.08), 0 4px 6px rgba(0,0,0,0.04);
-  --shadow-xl            : 0 20px 25px rgba(0,0,0,0.10), 0 8px 10px rgba(0,0,0,0.04);
-  --shadow-card          : 0 1px 3px rgba(0,0,0,0.08);
+  /* --- Shadow (warm-toned) --- */
+  --shadow-xs            : 0 1px 2px rgba(111,78,55,0.07);
+  --shadow-sm            : 0 1px 3px rgba(111,78,55,0.10), 0 1px 2px rgba(111,78,55,0.06);
+  --shadow-md            : 0 4px 6px rgba(111,78,55,0.09), 0 2px 4px rgba(111,78,55,0.06);
+  --shadow-lg            : 0 10px 15px rgba(111,78,55,0.10), 0 4px 6px rgba(111,78,55,0.07);
+  --shadow-xl            : 0 20px 25px rgba(111,78,55,0.12), 0 8px 10px rgba(111,78,55,0.07);
+  --shadow-card          : 0 1px 3px rgba(111,78,55,0.10);
 
   /* --- Transition --- */
   --transition           : 0.15s ease;
@@ -100,59 +100,59 @@
 
   /* --- Extra surfaces --- */
   --color-card-elevated  : #FFFFFF;
-  --color-overlay        : rgba(15, 23, 42, 0.45);
+  --color-overlay        : rgba(44, 26, 14, 0.45);
 
   /* --- Semantic status (aliases) --- */
-  --color-info-dark      : #0891B2;
+  --color-info-dark      : #7A6A5C;
 }
 
 /* ============================================================
    DARK MODE — html[data-theme="dark"]
-   Hanya override surface, text, border. Accent colors tetap sama.
+   Warm dark espresso tones — coklat gelap premium
    ============================================================ */
 
 html[data-theme="dark"] {
   /* --- Surface --- */
-  --color-bg             : #0D1117;
-  --color-bg-secondary   : #161B22;
-  --color-card           : #1C2128;
-  --color-card-hover     : #22272E;
-  --color-card-elevated  : #2D333B;
-  --color-overlay        : rgba(0, 0, 0, 0.6);
+  --color-bg             : #1A0F07;   /* Very dark espresso */
+  --color-bg-secondary   : #231609;
+  --color-card           : #2E1D10;   /* Dark card */
+  --color-card-hover     : #362214;
+  --color-card-elevated  : #3F2818;
+  --color-overlay        : rgba(0, 0, 0, 0.65);
 
   /* --- Text --- */
-  --color-text           : #E6EDF3;
-  --color-text-secondary : #CDD9E5;
-  --color-text-muted     : #8B949E;
-  --color-text-disabled  : #6E7681;
-  --color-text-inverse   : #0D1117;
+  --color-text           : #F0E6D8;   /* Warm cream text */
+  --color-text-secondary : #D9C9B5;
+  --color-text-muted     : #9E8870;
+  --color-text-disabled  : #6E5B48;
+  --color-text-inverse   : #1A0F07;
 
   /* --- Border --- */
-  --color-border         : #30363D;
-  --color-border-strong  : #484F58;
-  --color-border-focus   : #388BFD;
+  --color-border         : #4A3020;
+  --color-border-strong  : #634128;
+  --color-border-focus   : #C08B5A;
 
-  /* --- Sidebar (deeper dark in dark mode) --- */
-  --sidebar-bg           : #010409;
-  --sidebar-item-hover   : rgba(255,255,255,0.08);
-  --sidebar-item-active  : rgba(56, 139, 253, 0.15);
-  --sidebar-text         : #8B949E;
-  --sidebar-text-active  : #E6EDF3;
+  /* --- Sidebar (richest dark in dark mode) --- */
+  --sidebar-bg           : #0E0704;
+  --sidebar-item-hover   : rgba(255,255,255,0.09);
+  --sidebar-item-active  : rgba(200,150,90,0.20);
+  --sidebar-text         : #9E8870;
+  --sidebar-text-active  : #F0E6D8;
 
   /* --- Semantic colors: tint opacity in dark bg --- */
-  --color-primary-light  : rgba(37, 99, 235, 0.18);
-  --color-success-light  : rgba(16, 185, 129, 0.15);
-  --color-warning-light  : rgba(245, 158, 11, 0.15);
-  --color-danger-light   : rgba(239, 68, 68, 0.15);
-  --color-info-light     : rgba(6, 182, 212, 0.15);
+  --color-primary-light  : rgba(111, 78, 55, 0.22);
+  --color-success-light  : rgba(93, 138, 94, 0.18);
+  --color-warning-light  : rgba(192, 139, 58, 0.18);
+  --color-danger-light   : rgba(184, 84, 80, 0.18);
+  --color-info-light     : rgba(155, 139, 122, 0.18);
 
   /* --- Shadow (more pronounced in dark) --- */
-  --shadow-xs            : 0 1px 2px rgba(0,0,0,0.3);
-  --shadow-sm            : 0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.3);
-  --shadow-md            : 0 4px 6px rgba(0,0,0,0.4), 0 2px 4px rgba(0,0,0,0.3);
-  --shadow-lg            : 0 10px 15px rgba(0,0,0,0.5), 0 4px 6px rgba(0,0,0,0.3);
-  --shadow-xl            : 0 20px 25px rgba(0,0,0,0.55), 0 8px 10px rgba(0,0,0,0.3);
-  --shadow-card          : 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-xs            : 0 1px 2px rgba(0,0,0,0.40);
+  --shadow-sm            : 0 1px 3px rgba(0,0,0,0.50), 0 1px 2px rgba(0,0,0,0.40);
+  --shadow-md            : 0 4px 6px rgba(0,0,0,0.50), 0 2px 4px rgba(0,0,0,0.40);
+  --shadow-lg            : 0 10px 15px rgba(0,0,0,0.60), 0 4px 6px rgba(0,0,0,0.40);
+  --shadow-xl            : 0 20px 25px rgba(0,0,0,0.65), 0 8px 10px rgba(0,0,0,0.40);
+  --shadow-card          : 0 1px 3px rgba(0,0,0,0.50);
 }
 
 
@@ -361,10 +361,10 @@ ul, ol { list-style: none; }
 /* === COLOR-MIX FALLBACK for older browsers === */
 @supports not (background: color-mix(in srgb, red, blue)) {
   /* Fallback untuk CategoryPanel active state */
-  .cat-active-kopi    { background: #FEF3C7; color: #92400E; }
-  .cat-active-nonkopi { background: #D1FAE5; color: #065F46; }
-  .cat-active-makanan { background: #FCE7F3; color: #9D174D; }
-  .cat-active-snack   { background: #FEF3C7; color: #92400E; }
+  .cat-active-kopi    { background: #F5EFE6; color: #4E3524; }
+  .cat-active-nonkopi { background: #EDF5EE; color: #3E6B40; }
+  .cat-active-makanan { background: #FDF4E3; color: #9A6B1F; }
+  .cat-active-snack   { background: #FAF0EF; color: #8C3A36; }
 }
 
 /* === PRINT STYLES === */

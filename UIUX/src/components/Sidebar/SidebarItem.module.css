@@ -191,7 +191,7 @@
   top          : 6px;
   bottom       : 6px;
   width        : 3px;
-  background   : var(--color-primary);
+  background   : #C08C50;
   border-radius: 0 var(--radius-full) var(--radius-full) 0;
 }
 
@@ -213,7 +213,7 @@
   left          : calc(var(--sidebar-width-collapsed) + 8px);
   top           : 50%;
   transform     : translateY(-50%);
-  background    : #1E293B;
+  background    : #2C1A0E;
   color         : rgba(255,255,255,0.9);
   font-size     : 12px;
   font-weight   : 500;
@@ -224,7 +224,7 @@
   opacity       : 0;
   transition    : opacity var(--transition);
   z-index       : var(--z-dropdown);
-  border        : 1px solid rgba(255,255,255,0.08);
+  border        : 1px solid rgba(192, 140, 80, 0.12);
   box-shadow    : var(--shadow-lg);
 }
 

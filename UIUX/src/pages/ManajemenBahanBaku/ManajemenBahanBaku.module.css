@@ -1,8 +1,8 @@
 /* ManajemenBahanBaku — page-specific styles */
 
 /* === ROW STATUS TINTS === */
-.rowHabis   { background: rgba(239, 68, 68, 0.04); }
-.rowMenipis { background: rgba(245, 158, 11, 0.04); }
+.rowHabis   { background: rgba(184, 84, 80, 0.05); }
+.rowMenipis { background: rgba(192, 139, 58, 0.05); }
 
 /* === STATUS BADGE === */
 .statusBadge {

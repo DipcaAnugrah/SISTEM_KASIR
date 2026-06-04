@@ -8,7 +8,7 @@
   flex-direction    : column;
   align-items       : center;
   justify-content   : center;
-  background        : linear-gradient(135deg, #0F172A 0%, #1E293B 50%, #0F172A 100%);
+  background        : linear-gradient(135deg, #1A0C05 0%, #2C1A0E 50%, #1A0C05 100%);
   position          : relative;
   overflow          : hidden;
   padding           : var(--space-6);
@@ -28,7 +28,7 @@
 .bgOrb1 {
   width     : 500px;
   height    : 500px;
-  background: rgba(37, 99, 235, 0.15);
+  background: rgba(111, 78, 55, 0.20);
   top       : -150px;
   right     : -100px;
   animation : orbFloat1 8s ease-in-out infinite alternate;
@@ -37,7 +37,7 @@
 .bgOrb2 {
   width     : 400px;
   height    : 400px;
-  background: rgba(16, 185, 129, 0.08);
+  background: rgba(192, 139, 58, 0.12);
   bottom    : -120px;
   left      : -80px;
   animation : orbFloat2 10s ease-in-out infinite alternate;
@@ -46,7 +46,7 @@
 .bgOrb3 {
   width     : 300px;
   height    : 300px;
-  background: rgba(245, 158, 11, 0.06);
+  background: rgba(240, 220, 190, 0.07);
   top       : 50%;
   left      : 50%;
   transform : translate(-50%, -50%);

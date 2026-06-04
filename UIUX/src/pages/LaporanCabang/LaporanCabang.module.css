@@ -153,7 +153,7 @@
 }
 
 .barFill.today {
-  background: linear-gradient(to top, #059669, #10B981);
+  background: linear-gradient(to top, var(--color-success-dark), var(--color-success));
 }
 
 .barFill:hover::after {
@@ -322,7 +322,7 @@
   flex-shrink  : 0;
 }
 
-.rank1 { background: #FEF3C7; color: #B45309; }
+.rank1 { background: #F5EFE6; color: #6F4E37; }
 .rank2 { background: var(--color-bg-secondary); color: var(--color-text-muted); }
 .rank3 { background: var(--color-bg-secondary); color: var(--color-text-muted); }
 .rankOther { background: transparent; color: var(--color-text-disabled); }

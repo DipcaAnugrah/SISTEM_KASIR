@@ -156,13 +156,13 @@
 .btnPrimary {
   background: var(--color-primary);
   color     : #fff;
-  box-shadow: 0 2px 6px rgba(37,99,235,0.3);
+  box-shadow: 0 2px 6px rgba(111, 78, 55, 0.30);
 }
 
 .btnSuccess {
   background: var(--color-success);
   color     : #fff;
-  box-shadow: 0 2px 6px rgba(16,185,129,0.3);
+  box-shadow: 0 2px 6px rgba(93, 138, 94, 0.30);
 }
 
 .btnGhost {

@@ -27,15 +27,15 @@
 .logoMark {
   width          : 52px;
   height         : 52px;
-  background     : linear-gradient(135deg, #2563EB, #1D4ED8);
+  background     : linear-gradient(135deg, #6F4E37, #4E3524);
   border-radius  : var(--radius-md);
   display        : flex;
   align-items    : center;
   justify-content: center;
   color          : #FFFFFF;
   flex-shrink    : 0;
-  box-shadow     : 0 4px 12px rgba(37, 99, 235, 0.5),
-                   0 0 0 4px rgba(37, 99, 235, 0.15);
+  box-shadow     : 0 4px 12px rgba(111, 78, 55, 0.55),
+                   0 0 0 4px rgba(111, 78, 55, 0.18);
 }
 
 .appName {
@@ -105,12 +105,12 @@
 .inputWrapper:focus-within {
   border-color: var(--color-primary);
   background  : rgba(255, 255, 255, 0.09);
-  box-shadow  : 0 0 0 3px rgba(37, 99, 235, 0.2);
+  box-shadow  : 0 0 0 3px rgba(111, 78, 55, 0.22);
 }
 
 .inputWrapper.inputError {
   border-color: var(--color-danger);
-  box-shadow  : 0 0 0 3px rgba(239, 68, 68, 0.15);
+  box-shadow  : 0 0 0 3px rgba(184, 84, 80, 0.18);
 }
 
 .input {
@@ -138,7 +138,7 @@
 .input:-webkit-autofill:hover,
 .input:-webkit-autofill:focus {
   -webkit-text-fill-color: #FFFFFF;
-  -webkit-box-shadow: 0 0 0px 1000px rgba(30, 41, 59, 0.8) inset;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(44, 26, 14, 0.85) inset;
   transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -163,11 +163,11 @@
   display     : flex;
   align-items : center;
   gap         : var(--space-2);
-  background  : rgba(239, 68, 68, 0.12);
-  border      : 1px solid rgba(239, 68, 68, 0.3);
+  background  : rgba(184, 84, 80, 0.14);
+  border      : 1px solid rgba(184, 84, 80, 0.30);
   border-radius: var(--radius-sm);
   padding     : 10px var(--space-3);
-  color       : #FCA5A5;
+  color       : #E8A09E;
   font-size   : 13px;
   animation   : fadeIn 0.2s ease;
 }
@@ -212,7 +212,7 @@
   gap            : var(--space-2);
   width          : 100%;
   padding        : 13px var(--space-6);
-  background     : linear-gradient(135deg, #2563EB, #1D4ED8);
+  background     : linear-gradient(135deg, #6F4E37, #4E3524);
   color          : #FFFFFF;
   font-size      : 15px;
   font-weight    : 600;
@@ -221,19 +221,19 @@
   transition     : opacity var(--transition),
                    transform var(--transition),
                    box-shadow var(--transition);
-  box-shadow     : 0 4px 14px rgba(37, 99, 235, 0.5);
+  box-shadow     : 0 4px 14px rgba(111, 78, 55, 0.55);
   letter-spacing : 0.01em;
 }
 
 .submitBtn:hover:not(:disabled) {
   opacity   : 0.92;
   transform : translateY(-1px);
-  box-shadow: 0 6px 20px rgba(37, 99, 235, 0.55);
+  box-shadow: 0 6px 20px rgba(111, 78, 55, 0.60);
 }
 
 .submitBtn:active:not(:disabled) {
   transform : translateY(0);
-  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.4);
+  box-shadow: 0 2px 8px rgba(111, 78, 55, 0.45);
 }
 
 .submitBtn:disabled {

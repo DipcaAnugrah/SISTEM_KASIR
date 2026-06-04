@@ -61,9 +61,9 @@
   flex-shrink    : 0;
 }
 
-.rank.gold   { background: #FEF3C7; color: #B45309; }
-.rank.silver { background: #F1F5F9; color: #475569; }
-.rank.bronze { background: #FEF9F0; color: #C2692A; }
+.rank.gold   { background: #F5EFE6; color: #6F4E37; }
+.rank.silver { background: #F2EBE0; color: #8B7355; }
+.rank.bronze { background: #FDF4E3; color: #9A6B1F; }
 
 /* === INFO SECTION === */
 .info {
@@ -107,10 +107,10 @@
 .progressBar {
   height       : 100%;
   border-radius: var(--radius-full);
-  background   : linear-gradient(90deg, var(--color-primary), #60A5FA);
+  background   : linear-gradient(90deg, var(--color-primary), var(--color-warning));
   transition   : width 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .progressBar.barGold {
-  background: linear-gradient(90deg, #F59E0B, #FCD34D);
+  background: linear-gradient(90deg, var(--color-warning-dark), var(--color-warning));
 }

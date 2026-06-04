@@ -269,15 +269,15 @@
 }
 
 .cashBtn {
-  background: linear-gradient(135deg, #10B981, #059669);
+  background: linear-gradient(135deg, var(--color-success), var(--color-success-dark));
   color     : #fff;
-  box-shadow: 0 3px 10px rgba(16, 185, 129, 0.35);
+  box-shadow: 0 3px 10px rgba(93, 138, 94, 0.35);
 }
 
 .qrisBtn {
-  background: linear-gradient(135deg, #2563EB, #1D4ED8);
+  background: linear-gradient(135deg, #6F4E37, #4E3524);
   color     : #fff;
-  box-shadow: 0 3px 10px rgba(37, 99, 235, 0.35);
+  box-shadow: 0 3px 10px rgba(111, 78, 55, 0.38);
 }
 
 /* === CLEAR BUTTON === */
